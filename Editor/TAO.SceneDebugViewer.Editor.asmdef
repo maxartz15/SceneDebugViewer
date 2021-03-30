@@ -1,8 +1,7 @@
 {
-    "name": "COMPANYNAME.PACKAGENAME.Editor",
-    "references": [
-        "COMPANYNAME.PACKAGENAME"
-    ],
+    "name": "TAO.SceneDebugViewer.Editor",
+    "rootNamespace": "TAO.SceneDebugViewer.Editor",
+    "references": [],
     "includePlatforms": [
         "Editor"
     ],
@@ -12,5 +11,6 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": []
+    "versionDefines": [],
+    "noEngineReferences": false
 }

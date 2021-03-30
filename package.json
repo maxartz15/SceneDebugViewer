@@ -1,10 +1,10 @@
 {
-  "name": "com.COMPANYNAME.PACKAGENAME",
-  "displayName": "Template Unity Package",
+  "name": "com.tech_art_outsource.scene_debug_viewer",
+  "displayName": "TAO Scene Debug Viewer",
   "version": "0.1.0",
   "unity": "2019.3",
   "unityRelease": "7f1",
-  "description": "This is a template package, used as a basis to build a bigger one.",
+  "description": "View your scene with custom shaders to enhance debugging/development.",
   "category": "Tool",
   "type": "tool",
   "license": "MIT",
@@ -13,18 +13,8 @@
     "email": "info@maxartz15.com",
     "url": "https://www.maxartz15.com"
   },
-  "dependencies": {
-    "com.maxartz15.package1": "0.1.0"
-  },
   "keywords": [
-    "COMPANYNAME",
-    "PACKAGENAME"
-  ],
-  "samples": [
-    {
-      "displayName": "Example 1",
-      "description": "This sample is just an example",
-      "path": "Samples~/Example1"
-    }
+    "tech art outsource",
+    "debug viewer"
   ]
 }
