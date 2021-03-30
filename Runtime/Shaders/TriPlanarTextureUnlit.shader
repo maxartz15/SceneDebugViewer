@@ -29,7 +29,7 @@ Shader "Hidden/TriPlanarTexture"
 
             sampler2D _RS_Texture;
             float4 _RS_Texture_ST;
-            float _RS_Float;
+            float _RS_Sharpness;
 
             v2f vert (appdata v)
             {
@@ -57,7 +57,7 @@ Shader "Hidden/TriPlanarTexture"
 				//show texture on both sides of the object (positive and negative)
 				weights = abs(weights);
 				//make the transition sharper
-				weights = pow(weights, _RS_Float);
+				weights = pow(weights, _RS_Sharpness);
 				//make it so the sum of all components is 1
 				weights = weights / (weights.x + weights.y + weights.z);
 

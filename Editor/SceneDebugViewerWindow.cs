@@ -1,45 +1,66 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using System.Collections.Generic;
 
 namespace TAO.SceneDebugViewer.Editor
 {
 	public class SceneDebugViewerWindow : EditorWindow
 	{
-		static List<ReplacementShaderSetupScriptableObject> options = new List<ReplacementShaderSetupScriptableObject>();
+		private static SceneDebugViewerWindow window = null;
+		private static List<ReplacementShaderSetupScriptableObject> options = new List<ReplacementShaderSetupScriptableObject>();
 
 		[MenuItem("Window/SceneDebugViewer")]
 		static void Init()
 		{
-			options.Clear();
+			Load();
 
-			string[] guids = AssetDatabase.FindAssets("t:ReplacementShaderSetupScriptableObject", null);
-			foreach (string guid in guids)
-			{
-				options.Add((ReplacementShaderSetupScriptableObject)AssetDatabase.LoadAssetAtPath(AssetDatabase.GUIDToAssetPath(guid), typeof(ReplacementShaderSetupScriptableObject)));
-			}
-
-			SceneDebugViewerWindow window = (SceneDebugViewerWindow)EditorWindow.GetWindow(typeof(SceneDebugViewerWindow));
+			window = (SceneDebugViewerWindow)GetWindow(typeof(SceneDebugViewerWindow));
+			window.titleContent = new GUIContent("SDV");
 			window.Show();
 		}
 
 		private void OnGUI()
 		{
-			if (GUILayout.Button("Reset"))
+			using (new GUILayout.VerticalScope())
 			{
-				foreach (SceneView s in SceneView.sceneViews)
+				if (GUILayout.Button("Reload"))
 				{
-					s.SetSceneViewShaderReplace(null, null);
-					s.Repaint();
+					Load();
+				}
+
+				GUILayout.Space(6);
+
+				if (GUILayout.Button("Default", GUILayout.Height(44)))
+				{
+					foreach (SceneView s in SceneView.sceneViews)
+					{
+						s.SetSceneViewShaderReplace(null, null);
+						s.Repaint();
+					}
+				}
+
+				GUILayout.Space(6);
+
+				// TODO: Horizontal and vertical grid/table selection drawer.
+				foreach (var o in options)
+				{
+					if (GUILayout.Button(o.content, GUILayout.Height(44)))
+					{
+						o.Replace();
+					}
 				}
 			}
+		}
 
-			foreach (var o in options)
+		private static void Load()
+		{
+			options.Clear();
+
+			string[] guids = AssetDatabase.FindAssets("t:ReplacementShaderSetupScriptableObject", null);
+
+			foreach (string guid in guids)
 			{
-				if (GUILayout.Button(o.content))
-				{
-					o.Replace();
-				}
+				options.Add((ReplacementShaderSetupScriptableObject)AssetDatabase.LoadAssetAtPath(AssetDatabase.GUIDToAssetPath(guid), typeof(ReplacementShaderSetupScriptableObject)));
 			}
 		}
 	}

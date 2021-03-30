@@ -10,19 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1aa272ccd1306c545b68254a527f8025, type: 3}
-  m_Name: Overdraw
+  m_Name: GridUnlit
   m_EditorClassIdentifier: 
   content:
     m_Text: 
-    m_Image: {fileID: 10309, guid: 0000000000000000f000000000000000, type: 0}
-    m_Tooltip: 
-  shader: {fileID: 4800000, guid: 9f96928510529524c9190ccf618ceaf8, type: 3}
+    m_Image: {fileID: 2800000, guid: 258ec05c639dc22449b3ca11da10d2ae, type: 3}
+    m_Tooltip: Grid Unlit - View the scene with an unlit grid texture.
+  shader: {fileID: 4800000, guid: 938a5e8d620c4b943bb6b2b15202678c, type: 3}
   replacementTag: 
   parameters:
-  - m_name: _RS_Color
-    m_parameterType: 2
-    m_texture: {fileID: 0}
+  - m_name: _RS_Texture
+    m_parameterType: 0
+    m_texture: {fileID: 2800000, guid: 60a6c65bf59247d41bcc18553d97d2c5, type: 3}
     m_vector: {x: 0, y: 0, z: 0, w: 0}
     m_color: {r: 1, g: 0, b: 0, a: 0.14901961}
     m_float: 0
+    m_int: 0
+  - m_name: _RS_Sharpness
+    m_parameterType: 3
+    m_texture: {fileID: 2800000, guid: 60a6c65bf59247d41bcc18553d97d2c5, type: 3}
+    m_vector: {x: 0, y: 0, z: 0, w: 0}
+    m_color: {r: 1, g: 0, b: 0, a: 0.14901961}
+    m_float: 10
     m_int: 0
