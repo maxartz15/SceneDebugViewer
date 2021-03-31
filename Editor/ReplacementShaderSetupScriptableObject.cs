@@ -5,7 +5,7 @@ using UnityEngine;
 namespace TAO.SceneDebugViewer.Editor
 {
 #if UNITY_EDITOR
-	[CreateAssetMenu(menuName = "SceneDebugViewer/ReplacementShaderSetup")]
+	[CreateAssetMenu(menuName = "ReplacementShaderSetup", order = 99999)]
 	public class ReplacementShaderSetupScriptableObject : ScriptableObject
 	{
 		[Header("GUI")]

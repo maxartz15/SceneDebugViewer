@@ -9,7 +9,7 @@ namespace TAO.SceneDebugViewer.Editor
 		private static SceneDebugViewerWindow window = null;
 		private static List<ReplacementShaderSetupScriptableObject> options = new List<ReplacementShaderSetupScriptableObject>();
 
-		[MenuItem("Window/SceneDebugViewer")]
+		[MenuItem("Window/Analysis/SceneDebugViewer")]
 		static void Init()
 		{
 			Load();

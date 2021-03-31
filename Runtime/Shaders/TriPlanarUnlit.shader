@@ -41,8 +41,6 @@ Shader "Hidden/RS/TriPlanarUnlit"
 				fixed4 c = SampleTriPlanar(_RS_Texture, _RS_Texture_ST, i.worldPos, i.normal, _RS_Sharpness);
 				c *= _RS_Color;
 	            return c;
-
-				//return fixed4(abs(i.normal.xyz), 1);
 			}
 			ENDCG
 		}
