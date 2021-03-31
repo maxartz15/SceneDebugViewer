@@ -16,6 +16,8 @@ namespace TAO.SceneDebugViewer.Editor
 
 			window = (SceneDebugViewerWindow)GetWindow(typeof(SceneDebugViewerWindow));
 			window.titleContent = new GUIContent("SDV");
+			window.maxSize = new Vector2(101, window.maxSize.y);
+			window.minSize = new Vector2(101, window.minSize.y);
 			window.Show();
 		}
 
@@ -41,13 +43,24 @@ namespace TAO.SceneDebugViewer.Editor
 
 				GUILayout.Space(6);
 
-				// TODO: Horizontal and vertical grid/table selection drawer.
-				foreach (var o in options)
+				for (int i = 0; i < options.Count; i += 2)
 				{
-					if (GUILayout.Button(o.content, GUILayout.Height(44)))
+					GUILayout.BeginHorizontal();
+
+					if (GUILayout.Button(options[i].content, GUILayout.Height(44)))
 					{
-						o.Replace();
+						options[i].Replace();
 					}
+
+					if (i + 1 < options.Count)
+					{
+						if (GUILayout.Button(options[i + 1].content, GUILayout.Height(44)))
+						{
+							options[i + 1].Replace();
+						}
+					}
+
+					GUILayout.EndHorizontal();
 				}
 			}
 		}
