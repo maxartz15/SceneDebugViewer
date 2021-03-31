@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace TAO.SceneDebugViewer.Editor
 {
+#if UNITY_EDITOR
 	[CreateAssetMenu(menuName = "SceneDebugViewer/ReplacementShaderSetup")]
 	public class ReplacementShaderSetupScriptableObject : ScriptableObject
 	{
-#if UNITY_EDITOR
 		[Header("GUI")]
 		public GUIContent content = new GUIContent();
 		[Header("Shader")]
@@ -80,6 +80,6 @@ namespace TAO.SceneDebugViewer.Editor
 			Float,
 			Int
 		}
-#endif
 	}
+#endif
 }

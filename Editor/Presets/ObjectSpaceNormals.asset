@@ -10,19 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1aa272ccd1306c545b68254a527f8025, type: 3}
-  m_Name: Overdraw
+  m_Name: ObjectSpaceNormals
   m_EditorClassIdentifier: 
   content:
     m_Text: 
-    m_Image: {fileID: 2800000, guid: 0723191ce0fb9d44ebece6c36fe4776f, type: 3}
-    m_Tooltip: Overdraw
-  shader: {fileID: 4800000, guid: 9f96928510529524c9190ccf618ceaf8, type: 3}
+    m_Image: {fileID: 2800000, guid: b2efa4ed23d9cd14da026e9eaf25db42, type: 3}
+    m_Tooltip: Object Space Normals
+  shader: {fileID: 4800000, guid: 7f376fdcb4cabb94fa00a24677019988, type: 3}
   replacementTag: 
-  parameters:
-  - m_name: _RS_Color
-    m_parameterType: 2
-    m_texture: {fileID: 0}
-    m_vector: {x: 0, y: 0, z: 0, w: 0}
-    m_color: {r: 1, g: 0, b: 0, a: 0.101960786}
-    m_float: 0
-    m_int: 0
+  parameters: []

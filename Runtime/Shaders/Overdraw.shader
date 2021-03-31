@@ -1,4 +1,4 @@
-Shader "Hidden/Overdraw"
+Shader "Hidden/RS/Overdraw"
 {
 	SubShader
 	{
@@ -19,6 +19,8 @@ Shader "Hidden/Overdraw"
 			#pragma fragment frag
 
 			#include "UnityCG.cginc"
+			#include "RSPropertiesCG.cginc"
+			#include "RSUtilsCG.cginc"
 
 			struct appdata
 			{
@@ -36,8 +38,6 @@ Shader "Hidden/Overdraw"
 				o.vertex = UnityObjectToClipPos(v.vertex);
 				return o;
 			}
-
-			fixed4 _RS_Color;
 
 			fixed4 frag (v2f i) : SV_Target
 			{

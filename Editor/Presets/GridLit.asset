@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1aa272ccd1306c545b68254a527f8025, type: 3}
-  m_Name: Base
+  m_Name: GridLit
   m_EditorClassIdentifier: 
   content:
     m_Text: 
-    m_Image: {fileID: 2800000, guid: 1553c43734bfa6345a845ed8637f8fc7, type: 3}
-    m_Tooltip: Base Lit
-  shader: {fileID: 4800000, guid: fa8b3bbeb520d1c47b2ee619fe14e343, type: 3}
+    m_Image: {fileID: 2800000, guid: 1b5be4630aad66c4dbeb577efa26113f, type: 3}
+    m_Tooltip: Grid Lit
+  shader: {fileID: 4800000, guid: 442bea547b43fe643959790eb5b87ede, type: 3}
   replacementTag: 
   parameters:
   - m_name: _RS_Texture
     m_parameterType: 0
-    m_texture: {fileID: 2800000, guid: f8b8cfeccdb9c194bac037761af51a41, type: 3}
+    m_texture: {fileID: 2800000, guid: cb526cf389f85f541aa681de312dd588, type: 3}
     m_vector: {x: 0, y: 0, z: 0, w: 0}
-    m_color: {r: 0.504, g: 0.504, b: 0.504, a: 1}
+    m_color: {r: 1, g: 0, b: 0, a: 0.14901961}
     m_float: 0
     m_int: 0
   - m_name: _RS_Sharpness
@@ -35,22 +35,8 @@ MonoBehaviour:
     m_int: 0
   - m_name: _RS_Color
     m_parameterType: 2
-    m_texture: {fileID: 0}
+    m_texture: {fileID: 2800000, guid: 60a6c65bf59247d41bcc18553d97d2c5, type: 3}
     m_vector: {x: 0, y: 0, z: 0, w: 0}
     m_color: {r: 1, g: 1, b: 1, a: 1}
-    m_float: 0
-    m_int: 0
-  - m_name: _RS_Metallic
-    m_parameterType: 3
-    m_texture: {fileID: 0}
-    m_vector: {x: 0, y: 0, z: 0, w: 0}
-    m_color: {r: 0.504, g: 0.504, b: 0.504, a: 1}
-    m_float: 0
-    m_int: 0
-  - m_name: _RS_Glossiness
-    m_parameterType: 3
-    m_texture: {fileID: 0}
-    m_vector: {x: 0, y: 0, z: 0, w: 0}
-    m_color: {r: 0.504, g: 0.504, b: 0.504, a: 1}
-    m_float: 0
+    m_float: 10
     m_int: 0
