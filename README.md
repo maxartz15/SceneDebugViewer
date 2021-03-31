@@ -1,6 +1,33 @@
 # TAO - Scene Debug Viewer
 
-Description.
+![](Documentation~/Images/SDV_01.gif)
+
+A small debugging tool to draw the editor scene with replacement shaders. This can be helpful when blocking out a level or finding issues within the scene.
+
+## Features
+
+- User presets
+  - Shader and parameter configuration
+- Included examples
+  - Base color
+  - Triplanar grid (lit and unlit)
+  - World and object space normals
+  - Overdraw
+  - UV checker
+
+![](Documentation~/Images/Overdraw_01.png)
+
+![](Documentation~/Images/UV_01.png)
+
+![](Documentation~/Images/WorldSpaceNormals_01.png)
+
+## Getting Started
+
+SceneDebugViewer:
+> Window/Analysis/SceneDebugViewer
+
+ReplacementShaderSetup:
+> Assets/Create/SceneDebugViewer/ReplacementShaderSetup
 
 ## Install
 

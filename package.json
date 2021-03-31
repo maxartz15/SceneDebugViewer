@@ -1,9 +1,8 @@
 {
   "name": "com.tech_art_outsource.scene_debug_viewer",
   "displayName": "TAO Scene Debug Viewer",
-  "version": "0.1.0",
-  "unity": "2019.3",
-  "unityRelease": "7f1",
+  "version": "1.0.0",
+  "unity": "2019.4",
   "description": "View your scene with custom shaders to enhance debugging/development.",
   "category": "Tool",
   "type": "tool",
