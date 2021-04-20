@@ -10,6 +10,7 @@ namespace TAO.SceneDebugViewer.Editor
 		public static List<ReplacementShaderSetupScriptableObject> options = new List<ReplacementShaderSetupScriptableObject>();
 
 		private GUIStyle optionsButtonStyle = null;
+		private Vector2 scrollPos;
 
 		[MenuItem("Window/Analysis/SceneDebugViewer")]
 		static void Init()
@@ -37,49 +38,54 @@ namespace TAO.SceneDebugViewer.Editor
 					Load();
 				}
 
-				if (window.position.width <= 101)
+				using (var scope = new GUILayout.ScrollViewScope(scrollPos, false, false))
 				{
-					// Compact grid.
-					optionsButtonStyle = new GUIStyle(GUI.skin.button)
+					scrollPos = scope.scrollPosition;
+
+					if (window.position.width <= 101)
 					{
-						alignment = TextAnchor.MiddleCenter,
-						fixedHeight = 44
-					};
-
-					for (int i = 0; i < options.Count; i += 2)
-					{
-						GUILayout.BeginHorizontal();
-
-						if (GUILayout.Button(options[i].Content.compact, optionsButtonStyle))
+						// Compact grid.
+						optionsButtonStyle = new GUIStyle(GUI.skin.button)
 						{
-							options[i].Replace();
-						}
+							alignment = TextAnchor.MiddleCenter,
+							fixedHeight = 44
+						};
 
-						if (i + 1 < options.Count)
+						for (int i = 0; i < options.Count; i += 2)
 						{
-							if (GUILayout.Button(options[i + 1].Content.compact, optionsButtonStyle))
+							GUILayout.BeginHorizontal();
+
+							if (GUILayout.Button(options[i].Content.compact, optionsButtonStyle))
 							{
-								options[i + 1].Replace();
+								options[i].Replace();
 							}
+
+							if (i + 1 < options.Count)
+							{
+								if (GUILayout.Button(options[i + 1].Content.compact, optionsButtonStyle))
+								{
+									options[i + 1].Replace();
+								}
+							}
+
+							GUILayout.EndHorizontal();
 						}
-
-						GUILayout.EndHorizontal();
 					}
-				}
-				else
-				{
-					// Normal list.
-					optionsButtonStyle = new GUIStyle(GUI.skin.button)
+					else
 					{
-						alignment = TextAnchor.MiddleLeft,
-						fixedHeight = 44
-					};
-
-					for (int i = 0; i < options.Count; i ++)
-					{
-						if (GUILayout.Button(options[i].Content.normal, optionsButtonStyle))
+						// Normal list.
+						optionsButtonStyle = new GUIStyle(GUI.skin.button)
 						{
-							options[i].Replace();
+							alignment = TextAnchor.MiddleLeft,
+							fixedHeight = 44
+						};
+
+						for (int i = 0; i < options.Count; i ++)
+						{
+							if (GUILayout.Button(options[i].Content.normal, optionsButtonStyle))
+							{
+								options[i].Replace();
+							}
 						}
 					}
 				}
