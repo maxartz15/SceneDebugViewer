@@ -38,7 +38,7 @@ Shader "Hidden/RS/TriPlanarUnlit"
 
 			fixed4 frag(v2f i) : SV_Target
 			{
-				fixed4 c = SampleTriPlanar(_RS_Texture, _RS_Texture_ST, i.worldPos, i.normal, _RS_Sharpness);
+				fixed4 c = RS_TriPlanar(_RS_Texture, _RS_Texture_ST, i.worldPos, i.normal, _RS_Sharpness);
 				c *= _RS_Color;
 	            return c;
 			}

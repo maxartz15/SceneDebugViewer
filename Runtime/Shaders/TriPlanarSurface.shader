@@ -23,7 +23,7 @@ Shader "Hidden/RS/TriPlanarLit"
 
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-            fixed4 c = SampleTriPlanar(_RS_Texture, _RS_Texture_ST, IN.worldPos, IN.worldNormal, _RS_Sharpness);
+            fixed4 c = RS_TriPlanar(_RS_Texture, _RS_Texture_ST, IN.worldPos, IN.worldNormal, _RS_Sharpness);
 
             o.Albedo = c * _RS_Color;
             o.Metallic = _RS_Metallic;
