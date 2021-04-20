@@ -111,3 +111,59 @@ MonoBehaviour:
       e32: 0
       e33: 0
     m_matrixArray: []
+  - m_name: _RS_Metallic
+    m_parameterType: 5
+    m_texture: {fileID: 0}
+    m_vector: {x: 0, y: 0, z: 0, w: 0}
+    m_vectorArray: []
+    m_color: {r: 1, g: 1, b: 1, a: 1}
+    m_colorArray: []
+    m_float: 0
+    m_floatArray: []
+    m_int: 0
+    m_matrix:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    m_matrixArray: []
+  - m_name: _RS_Glossiness
+    m_parameterType: 5
+    m_texture: {fileID: 0}
+    m_vector: {x: 0, y: 0, z: 0, w: 0}
+    m_vectorArray: []
+    m_color: {r: 1, g: 1, b: 1, a: 1}
+    m_colorArray: []
+    m_float: 0
+    m_floatArray: []
+    m_int: 0
+    m_matrix:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    m_matrixArray: []

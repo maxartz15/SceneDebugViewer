@@ -1,6 +1,6 @@
 // Ref: https://aras-p.info/blog/2011/05/03/a-way-to-visualize-mip-levels/
 
-Shader "Hidden/RS/TexelDensityChecker"
+Shader "Hidden/RS/TexelDensity"
 {
 	SubShader
 	{
