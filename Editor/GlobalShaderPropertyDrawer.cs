@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEditor;
-using System;
 
 namespace TAO.SceneDebugViewer.Editor
 {
@@ -31,38 +30,10 @@ namespace TAO.SceneDebugViewer.Editor
 				position.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
 
 				ReplacementShaderSetupScriptableObject.ParameterType parameterType = (ReplacementShaderSetupScriptableObject.ParameterType)type.enumValueIndex;
-				SerializedProperty p = null;
-				bool includeChildren = false;
+				SerializedProperty p = property.FindPropertyRelative(parameterType.ToString());
 
-				switch (parameterType)
-				{
-					case ReplacementShaderSetupScriptableObject.ParameterType.Texture:
-						p = property.FindPropertyRelative("m_texture");
-						break;
-					case ReplacementShaderSetupScriptableObject.ParameterType.Vector:
-						p = property.FindPropertyRelative("m_vector");
-
-						if (p.isExpanded)
-						{
-							position.height = (EditorGUIUtility.singleLineHeight * 4) + (EditorGUIUtility.standardVerticalSpacing * 3);
-							includeChildren = true;
-						}
-
-						break;
-					case ReplacementShaderSetupScriptableObject.ParameterType.Color:
-						p = property.FindPropertyRelative("m_color");
-						break;
-					case ReplacementShaderSetupScriptableObject.ParameterType.Float:
-						p = property.FindPropertyRelative("m_float");
-						break;
-					case ReplacementShaderSetupScriptableObject.ParameterType.Int:
-						p = property.FindPropertyRelative("m_int");
-						break;
-					default:
-						break;
-				}
-
-				EditorGUI.PropertyField(position, p, includeChildren);
+				position.height = EditorGUI.GetPropertyHeight(p, includeChildren: true);
+				EditorGUI.PropertyField(position, p, includeChildren: true);
 			}
 
 			EditorGUI.EndProperty();
@@ -70,37 +41,20 @@ namespace TAO.SceneDebugViewer.Editor
 
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 		{
-			int totalLines = 1;
+			var spacing = EditorGUIUtility.standardVerticalSpacing;
+			var height = EditorGUIUtility.singleLineHeight + spacing;
 
 			if (property.isExpanded)
 			{
-				totalLines += 3;
+				height += (EditorGUIUtility.singleLineHeight + spacing) * 2;
 
 				SerializedProperty type = property.FindPropertyRelative("m_parameterType");
 				ReplacementShaderSetupScriptableObject.ParameterType parameterType = (ReplacementShaderSetupScriptableObject.ParameterType)type.enumValueIndex;
 
-				switch (parameterType)
-				{
-					case ReplacementShaderSetupScriptableObject.ParameterType.Texture:
-						break;
-					case ReplacementShaderSetupScriptableObject.ParameterType.Vector:
-						if (property.FindPropertyRelative("m_vector").isExpanded)
-						{
-							totalLines += 4;
-						}
-						break;
-					case ReplacementShaderSetupScriptableObject.ParameterType.Color:
-						break;
-					case ReplacementShaderSetupScriptableObject.ParameterType.Float:
-						break;
-					case ReplacementShaderSetupScriptableObject.ParameterType.Int:
-						break;
-					default:
-						break;
-				}
+				height += EditorGUI.GetPropertyHeight(property.FindPropertyRelative(parameterType.ToString()), true);
 			}
 
-			return EditorGUIUtility.singleLineHeight * totalLines + EditorGUIUtility.standardVerticalSpacing * (totalLines - 1);
+			return height;
 		}
 	}
 }

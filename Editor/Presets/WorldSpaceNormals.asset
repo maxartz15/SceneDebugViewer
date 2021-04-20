@@ -13,9 +13,17 @@ MonoBehaviour:
   m_Name: WorldSpaceNormals
   m_EditorClassIdentifier: 
   content:
-    m_Text: 
-    m_Image: {fileID: 2800000, guid: d9b83aa61ceb006419b0c2460bbbe3cc, type: 3}
-    m_Tooltip: World Space Normals
+    icon: {fileID: 2800000, guid: d9b83aa61ceb006419b0c2460bbbe3cc, type: 3}
+    tooltip: 
+    sortingOrder: 21
+    compact:
+      m_Text: 
+      m_Image: {fileID: 2800000, guid: d9b83aa61ceb006419b0c2460bbbe3cc, type: 3}
+      m_Tooltip: 
+    normal:
+      m_Text: '    WorldSpaceNormals'
+      m_Image: {fileID: 2800000, guid: d9b83aa61ceb006419b0c2460bbbe3cc, type: 3}
+      m_Tooltip: 
   shader: {fileID: 4800000, guid: f2163d0d9cb9f8a4fbb6c07dcf8ac7d3, type: 3}
   replacementTag: 
   parameters: []

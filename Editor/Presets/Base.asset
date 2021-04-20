@@ -13,9 +13,17 @@ MonoBehaviour:
   m_Name: Base
   m_EditorClassIdentifier: 
   content:
-    m_Text: 
-    m_Image: {fileID: 2800000, guid: 1553c43734bfa6345a845ed8637f8fc7, type: 3}
-    m_Tooltip: Base Lit
+    icon: {fileID: 2800000, guid: 1553c43734bfa6345a845ed8637f8fc7, type: 3}
+    tooltip: 
+    sortingOrder: -99
+    compact:
+      m_Text: 
+      m_Image: {fileID: 2800000, guid: 1553c43734bfa6345a845ed8637f8fc7, type: 3}
+      m_Tooltip: 
+    normal:
+      m_Text: '    Base'
+      m_Image: {fileID: 2800000, guid: 1553c43734bfa6345a845ed8637f8fc7, type: 3}
+      m_Tooltip: 
   shader: {fileID: 4800000, guid: fa8b3bbeb520d1c47b2ee619fe14e343, type: 3}
   replacementTag: 
   parameters:
@@ -23,34 +31,139 @@ MonoBehaviour:
     m_parameterType: 0
     m_texture: {fileID: 2800000, guid: f8b8cfeccdb9c194bac037761af51a41, type: 3}
     m_vector: {x: 0, y: 0, z: 0, w: 0}
+    m_vectorArray: []
     m_color: {r: 0.504, g: 0.504, b: 0.504, a: 1}
+    m_colorArray: []
     m_float: 0
+    m_floatArray: []
     m_int: 0
-  - m_name: _RS_Sharpness
+    m_matrix:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    m_matrixArray: []
+  - m_name: _RS_Color
     m_parameterType: 3
+    m_texture: {fileID: 0}
+    m_vector: {x: 0, y: 0, z: 0, w: 0}
+    m_vectorArray: []
+    m_color: {r: 1, g: 1, b: 1, a: 1}
+    m_colorArray: []
+    m_float: 0
+    m_floatArray: []
+    m_int: 0
+    m_matrix:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    m_matrixArray: []
+  - m_name: _RS_Sharpness
+    m_parameterType: 5
     m_texture: {fileID: 2800000, guid: 60a6c65bf59247d41bcc18553d97d2c5, type: 3}
     m_vector: {x: 0, y: 0, z: 0, w: 0}
+    m_vectorArray: []
     m_color: {r: 1, g: 0, b: 0, a: 0.14901961}
+    m_colorArray: []
     m_float: 10
+    m_floatArray: []
     m_int: 0
-  - m_name: _RS_Color
-    m_parameterType: 2
-    m_texture: {fileID: 0}
-    m_vector: {x: 0, y: 0, z: 0, w: 0}
-    m_color: {r: 1, g: 1, b: 1, a: 1}
-    m_float: 0
-    m_int: 0
+    m_matrix:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    m_matrixArray: []
   - m_name: _RS_Metallic
-    m_parameterType: 3
+    m_parameterType: 5
     m_texture: {fileID: 0}
     m_vector: {x: 0, y: 0, z: 0, w: 0}
+    m_vectorArray: []
     m_color: {r: 0.504, g: 0.504, b: 0.504, a: 1}
+    m_colorArray: []
     m_float: 0
+    m_floatArray: []
     m_int: 0
+    m_matrix:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    m_matrixArray: []
   - m_name: _RS_Glossiness
-    m_parameterType: 3
+    m_parameterType: 5
     m_texture: {fileID: 0}
     m_vector: {x: 0, y: 0, z: 0, w: 0}
+    m_vectorArray: []
     m_color: {r: 0.504, g: 0.504, b: 0.504, a: 1}
+    m_colorArray: []
     m_float: 0
+    m_floatArray: []
     m_int: 0
+    m_matrix:
+      e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    m_matrixArray: []

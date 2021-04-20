@@ -6,8 +6,10 @@ namespace TAO.SceneDebugViewer.Editor
 {
 	public class SceneDebugViewerWindow : EditorWindow
 	{
-		private static SceneDebugViewerWindow window = null;
-		private static List<ReplacementShaderSetupScriptableObject> options = new List<ReplacementShaderSetupScriptableObject>();
+		public static SceneDebugViewerWindow window = null;
+		public static List<ReplacementShaderSetupScriptableObject> options = new List<ReplacementShaderSetupScriptableObject>();
+
+		private GUIStyle optionsButtonStyle = null;
 
 		[MenuItem("Window/Analysis/SceneDebugViewer")]
 		static void Init()
@@ -16,13 +18,18 @@ namespace TAO.SceneDebugViewer.Editor
 
 			window = (SceneDebugViewerWindow)GetWindow(typeof(SceneDebugViewerWindow));
 			window.titleContent = new GUIContent("SDV");
-			window.maxSize = new Vector2(101, window.maxSize.y);
+			//window.maxSize = new Vector2(101, window.maxSize.y);
 			window.minSize = new Vector2(101, window.minSize.y);
 			window.Show();
 		}
 
 		private void OnGUI()
 		{
+			if (window == null)
+			{
+				window = (SceneDebugViewerWindow)GetWindow(typeof(SceneDebugViewerWindow));
+			}
+
 			using (new GUILayout.VerticalScope())
 			{
 				if (GUILayout.Button("Reload"))
@@ -30,37 +37,51 @@ namespace TAO.SceneDebugViewer.Editor
 					Load();
 				}
 
-				GUILayout.Space(6);
-
-				if (GUILayout.Button("Default", GUILayout.Height(44)))
+				if (window.position.width <= 101)
 				{
-					foreach (SceneView s in SceneView.sceneViews)
+					// Compact grid.
+					optionsButtonStyle = new GUIStyle(GUI.skin.button)
 					{
-						s.SetSceneViewShaderReplace(null, null);
-						s.Repaint();
+						alignment = TextAnchor.MiddleCenter,
+						fixedHeight = 44
+					};
+
+					for (int i = 0; i < options.Count; i += 2)
+					{
+						GUILayout.BeginHorizontal();
+
+						if (GUILayout.Button(options[i].Content.compact, optionsButtonStyle))
+						{
+							options[i].Replace();
+						}
+
+						if (i + 1 < options.Count)
+						{
+							if (GUILayout.Button(options[i + 1].Content.compact, optionsButtonStyle))
+							{
+								options[i + 1].Replace();
+							}
+						}
+
+						GUILayout.EndHorizontal();
 					}
 				}
-
-				GUILayout.Space(6);
-
-				for (int i = 0; i < options.Count; i += 2)
+				else
 				{
-					GUILayout.BeginHorizontal();
-
-					if (GUILayout.Button(options[i].content, GUILayout.Height(44)))
+					// Normal list.
+					optionsButtonStyle = new GUIStyle(GUI.skin.button)
 					{
-						options[i].Replace();
-					}
+						alignment = TextAnchor.MiddleLeft,
+						fixedHeight = 44
+					};
 
-					if (i + 1 < options.Count)
+					for (int i = 0; i < options.Count; i ++)
 					{
-						if (GUILayout.Button(options[i + 1].content, GUILayout.Height(44)))
+						if (GUILayout.Button(options[i].Content.normal, optionsButtonStyle))
 						{
-							options[i + 1].Replace();
+							options[i].Replace();
 						}
 					}
-
-					GUILayout.EndHorizontal();
 				}
 			}
 		}
@@ -69,11 +90,23 @@ namespace TAO.SceneDebugViewer.Editor
 		{
 			options.Clear();
 
-			string[] guids = AssetDatabase.FindAssets("t:ReplacementShaderSetupScriptableObject", null);
+			string[] guids = AssetDatabase.FindAssets(string.Format("t:{0}", typeof(ReplacementShaderSetupScriptableObject).ToString()), null);
 
 			foreach (string guid in guids)
 			{
 				options.Add((ReplacementShaderSetupScriptableObject)AssetDatabase.LoadAssetAtPath(AssetDatabase.GUIDToAssetPath(guid), typeof(ReplacementShaderSetupScriptableObject)));
+			}
+
+			SortOptions();
+		}
+
+		private static void SortOptions()
+		{
+			if (options != null)
+			{
+				RSSOComparer comparer = new RSSOComparer();
+
+				options.Sort(comparer);
 			}
 		}
 	}

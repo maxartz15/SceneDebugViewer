@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1aa272ccd1306c545b68254a527f8025, type: 3}
-  m_Name: ObjectSpaceNormals
+  m_Name: Default
   m_EditorClassIdentifier: 
   content:
-    icon: {fileID: 2800000, guid: b2efa4ed23d9cd14da026e9eaf25db42, type: 3}
+    icon: {fileID: 2800000, guid: 1553c43734bfa6345a845ed8637f8fc7, type: 3}
     tooltip: 
-    sortingOrder: 20
+    sortingOrder: -999
     compact:
       m_Text: 
-      m_Image: {fileID: 2800000, guid: b2efa4ed23d9cd14da026e9eaf25db42, type: 3}
+      m_Image: {fileID: 2800000, guid: 1553c43734bfa6345a845ed8637f8fc7, type: 3}
       m_Tooltip: 
     normal:
-      m_Text: '    ObjectSpaceNormals'
-      m_Image: {fileID: 2800000, guid: b2efa4ed23d9cd14da026e9eaf25db42, type: 3}
+      m_Text: '    Default'
+      m_Image: {fileID: 2800000, guid: 1553c43734bfa6345a845ed8637f8fc7, type: 3}
       m_Tooltip: 
-  shader: {fileID: 4800000, guid: 7f376fdcb4cabb94fa00a24677019988, type: 3}
+  shader: {fileID: 0}
   replacementTag: 
   parameters: []
