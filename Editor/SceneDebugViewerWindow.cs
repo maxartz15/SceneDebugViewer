@@ -12,7 +12,7 @@ namespace TAO.SceneDebugViewer.Editor
 		private GUIStyle optionsButtonStyle = null;
 		private Vector2 scrollPos;
 
-		[MenuItem("Window/Analysis/SceneDebugViewer")]
+		[MenuItem("Window/Analysis/SceneDebugViewer/SDV")]
 		static void Init()
 		{
 			Load();

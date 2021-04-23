@@ -40,9 +40,8 @@ Shader "Hidden/RS/TexelDensity"
 				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 
-				int mips = RS_MipCount(_MainTex_TexelSize);
-				float2 mipuv = v.uv * (_MainTex_TexelSize.zw / mips);
-				o.uvmip = TRANSFORM_TEX(mipuv, _MainTex);
+				//int mip = RS_MipMap(o.uv, _RS_Texture_TexelSize);
+				o.uvmip = o.uv * _MainTex_TexelSize.zw / (_RS_Texture_TexelSize.zw / 4.0);
 
 				return o;
 			}

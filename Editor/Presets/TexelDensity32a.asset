@@ -10,72 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1aa272ccd1306c545b68254a527f8025, type: 3}
-  m_Name: MipMaps
+  m_Name: TexelDensity32a
   m_EditorClassIdentifier: 
   content:
     icon: {fileID: 2800000, guid: e613356da75e6764ea82a89a5ce3c6bc, type: 3}
     tooltip: 
-    sortingOrder: 30
+    sortingOrder: 32
     compact:
       m_Text: 
       m_Image: {fileID: 2800000, guid: e613356da75e6764ea82a89a5ce3c6bc, type: 3}
       m_Tooltip: 
     normal:
-      m_Text: '    MipMaps'
+      m_Text: '    TexelDensity32a'
       m_Image: {fileID: 2800000, guid: e613356da75e6764ea82a89a5ce3c6bc, type: 3}
       m_Tooltip: 
-  shader: {fileID: 4800000, guid: 19d63524eb012af4e8e086121f546128, type: 3}
+  shader: {fileID: 4800000, guid: 83a3ee0da908c7542be7a089c047d28f, type: 3}
   replacementTag: 
   parameters:
-  - m_name: _Max
-    m_parameterType: 7
-    m_texture: {fileID: 0}
+  - m_name: _RS_Texture
+    m_parameterType: 0
+    m_texture: {fileID: 2800000, guid: d3577f229be143744905ab6bbccd3a47, type: 2}
     m_vector: {x: 0, y: 0, z: 0, w: 0}
-    m_vectorArray: []
-    m_color: {r: 0, g: 0, b: 0, a: 0}
-    m_colorArray:
-    - {r: 0, g: 0.4, b: 1, a: 1}
-    - {r: 0, g: 1, b: 1, a: 1}
-    - {r: 0, g: 1, b: 0.4, a: 1}
-    - {r: 0.2, g: 1, b: 0, a: 1}
-    - {r: 0.8, g: 1, b: 0, a: 1}
-    - {r: 1, g: 0.6, b: 0, a: 1}
+    m_vectorArray:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    m_color: {r: 1, g: 0, b: 0, a: 0.14901961}
+    m_colorArray: []
     m_float: 0
-    m_floatArray: []
-    m_int: 6
-    m_matrix:
-      e00: 0
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 0
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 0
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 0
-    m_matrixArray: []
-  - m_name: _MipMapColors
-    m_parameterType: 4
-    m_texture: {fileID: 0}
-    m_vector: {x: 0, y: 0, z: 0, w: 0}
-    m_vectorArray: []
-    m_color: {r: 0, g: 0, b: 0, a: 0}
-    m_colorArray:
-    - {r: 0, g: 0.4, b: 1, a: 1}
-    - {r: 0, g: 1, b: 1, a: 1}
-    - {r: 0, g: 1, b: 0.4, a: 1}
-    - {r: 0.2, g: 1, b: 0, a: 1}
-    - {r: 0.8, g: 1, b: 0, a: 1}
-    - {r: 1, g: 0.6, b: 0, a: 1}
-    m_float: 0
-    m_floatArray: []
+    m_floatArray:
+    - 0
+    - 0
+    - 0
     m_int: 0
     m_matrix:
       e00: 0
@@ -94,4 +60,36 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 0
-    m_matrixArray: []
+    m_matrixArray:
+    - e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0
+    - e00: 0
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 0
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 0

@@ -21,7 +21,7 @@ MonoBehaviour:
       m_Image: {fileID: 2800000, guid: e613356da75e6764ea82a89a5ce3c6bc, type: 3}
       m_Tooltip: 
     normal:
-      m_Text: '    TexelDensityChecker 1'
+      m_Text: '    TexelDensity32'
       m_Image: {fileID: 2800000, guid: e613356da75e6764ea82a89a5ce3c6bc, type: 3}
       m_Tooltip: 
   shader: {fileID: 4800000, guid: 83a3ee0da908c7542be7a089c047d28f, type: 3}
@@ -29,7 +29,7 @@ MonoBehaviour:
   parameters:
   - m_name: _RS_Texture
     m_parameterType: 0
-    m_texture: {fileID: 2800000, guid: 5c021ebf5a89dcf4cb5504809772f451, type: 2}
+    m_texture: {fileID: 2800000, guid: 05a258bf93e7ca749ae1cd66d39fb477, type: 2}
     m_vector: {x: 0, y: 0, z: 0, w: 0}
     m_vectorArray:
     - {x: 0, y: 0, z: 0, w: 0}
