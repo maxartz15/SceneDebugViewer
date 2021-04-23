@@ -14,12 +14,16 @@ A small debugging tool to draw the editor scene with replacement shaders. This c
   - World and object space normals
   - Overdraw
   - UV checker
+  - Vertex Colors
+  - Texel Density
 
 ![](Documentation~/Images/Overdraw_01.png)
 
 ![](Documentation~/Images/UV_01.png)
 
 ![](Documentation~/Images/WorldSpaceNormals_01.png)
+
+![](Documentation~/Images/TexelDensity_01.png)
 
 ## Getting Started
 

@@ -7,3 +7,6 @@ This package borrows code from various different sources, including:
 
 ### WorldSpaceNormals
 - Source: [UnityDocs](https://docs.unity3d.com/Manual/SL-VertexFragmentShaderExamples.html)
+
+### TexelDensity/MipMaps
+- Source: [A way to visualize mip levels](https://aras-p.info/blog/2011/05/03/a-way-to-visualize-mip-levels/)
